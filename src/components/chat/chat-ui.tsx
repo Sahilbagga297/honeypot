@@ -60,7 +60,12 @@ export default function ChatUI() {
         body.agent_type = 'honeypot'
       }
 
-      const res = await fetch("/api/chat", {
+      // Use proxy in dev, direct URL in prod
+      const baseUrl = import.meta.env.DEV
+        ? ""
+        : import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "") || "";
+
+      const res = await fetch(`${baseUrl}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
