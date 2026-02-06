@@ -63,7 +63,7 @@ export default function ChatUI() {
       // Use proxy in dev, direct URL in prod
       const baseUrl = import.meta.env.DEV
         ? ""
-        : import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "") || "";
+        : import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "") || "https://chatbot-1-fnli.onrender.com";
 
       const res = await fetch(`${baseUrl}/api/chat`, {
         method: "POST",
