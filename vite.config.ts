@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_BACKEND_URL || 'http://localhost:5000',
+          target: 'https://chatbot-1-fnli.onrender.com',
           changeOrigin: true,
           secure: false,
         }
