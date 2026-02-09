@@ -65,7 +65,7 @@ export default function ChatUI() {
         ? ""
         : import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "") || "https://chatbot-1-fnli.onrender.com";
 
-      const res = await fetch(`${baseUrl}/api/chat`, {
+      const res = await fetch(`${baseUrl}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
